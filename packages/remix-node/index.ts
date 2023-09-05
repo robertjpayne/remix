@@ -1,6 +1,8 @@
 import sourceMapSupport from "source-map-support";
 
-sourceMapSupport.install();
+if (!(process.env.REMIX_SKIP_SOURCEMAP_INSTALL === undefined)) {
+  sourceMapSupport.install();
+}
 
 export { AbortController } from "abort-controller";
 
